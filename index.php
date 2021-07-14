@@ -1,0 +1,1 @@
+<?php namespace com\vanderms\wanderertheme; ?>
