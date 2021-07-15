@@ -10,6 +10,10 @@
     display: none;
   }
 
+  .wanderer-backdrop{
+    display: none;
+  }
+
   .wanderer-bar{
     @include size(100%, $navbar-height);
     @include padding-container;
@@ -42,6 +46,22 @@
 
   @include media-query($tablet){
 
+    &.wanderer-close{
+      .wanderer-menu-bar{
+        .wanderer-menu-btn{
+          display: unset;
+        }
+      }
+      .wanderer-backdrop{
+        display: none;
+      }
+
+      .wanderer-bar{
+        width: 0px;
+        transition: width 0s;
+      }
+    }
+
     .wanderer-placeholder{
       height: $sidebar-menu-height;
     }
@@ -54,6 +74,20 @@
       position: fixed;
       top: 0px;
       padding-right: 20px;
+
+      .wanderer-menu-btn{
+        display: none;
+      }
+    }
+
+    .wanderer-backdrop{
+      @include size(100%, 100vh);
+      background-color: black;
+      opacity: 0.8;
+      position: fixed;
+      top: 0px;
+      display: block;
+      z-index: 9;
     }
       
     .wanderer-bar{
@@ -61,7 +95,8 @@
       flex-direction: column;
       justify-content: flex-start;
       padding: 20% 0px 0px 0px;
-      overflow: hidden;      
+      overflow: hidden;    
+      transition: width 0.25s;  
 
       .wanderer-close-btn{
         display: block;
@@ -75,11 +110,9 @@
         margin-top: 40px;
         a{
           margin-top: 40px;
+          margin-left: 0px;
         }
-
       }
-
     }
-
   }
 }

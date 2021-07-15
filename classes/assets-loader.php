@@ -16,6 +16,7 @@ class AssetsLoader {
       $namespace = 'com\\vanderms\\wanderertheme\\AssetsLoader::'; 
       add_action( 'wp_enqueue_scripts', $namespace . 'loadStyles');
       add_action( 'wp_enqueue_scripts',$namespace . 'loadScripts');
+      add_filter('script_loader_tag', $namespace.'loadAsJsModule', 10, 3);
       AssetsLoader::$hasInit = true;
     endif;
   }
@@ -33,16 +34,19 @@ class AssetsLoader {
     endforeach;
   }
 
-  public static function loadScripts(){
-    $files = scandir(get_template_directory().'/assets/js/');
+  public static function loadScripts(){    
+    wp_enqueue_script( 'wanderer-main', AssetsLoader::$uri . '/assets/js/main.js', 
+      false,  AssetsLoader::$version, true
+    );
+  }
 
-    foreach($files as $file):
-      if(strpos($file, '.js') !== false):        
-        wp_enqueue_script( $file, AssetsLoader::$uri . '/assets/js/' . $file, 
-          false,  AssetsLoader::$version, true
-        );
-      endif;
-    endforeach;
+  public static function loadAsJsModule($tag, $handle, $src){
+    if ('wanderer-main' !== $handle ):
+      return $tag;
+    endif;
+    
+    $tag = '<script type="module" src="' . esc_url( $src ) . '"></script>';
+    return $tag;
   }
 }
 ?>
