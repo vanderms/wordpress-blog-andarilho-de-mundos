@@ -6,6 +6,10 @@ require_once 'classes/primary-menu.php';
   
 
 AssetsLoader::init();
+
 PrimaryMenu::init();
+
+add_theme_support('custom-logo');
+
 
 ?>

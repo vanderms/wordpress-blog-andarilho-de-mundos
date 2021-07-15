@@ -1,0 +1,85 @@
+@import 'globals.scss';
+
+
+.wanderer-nav-header{
+  .wanderer-placeholder{
+    @include size(100%, $navbar-height);
+  }
+
+  .wanderer-menu-bar{
+    display: none;
+  }
+
+  .wanderer-bar{
+    @include size(100%, $navbar-height);
+    @include padding-container;
+    @include flexbox(space-between);
+    @include bg-schema($light, $dark);
+    position: fixed;
+    top: 0px;
+    z-index: 10;
+
+    .wanderer-close-btn{
+      display: none;
+    }
+
+    .wanderer-logo{
+      font-size: 20px;
+      font-weight: 900; 
+      text-decoration: none;
+      color: inherit;    
+    }
+
+    .wanderer-links{
+      a {
+        margin-left: 40px;
+        text-decoration: none;
+        color: inherit;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  @include media-query($tablet){
+
+    .wanderer-placeholder{
+      height: $sidebar-menu-height;
+    }
+
+    .wanderer-menu-bar{
+      @include flexbox(flex-end);
+      @include size(100%, $sidebar-menu-height);
+      background-color: $light;
+      z-index: 8;
+      position: fixed;
+      top: 0px;
+      padding-right: 20px;
+    }
+      
+    .wanderer-bar{
+      @include size(85%, 100vh);
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 20% 0px 0px 0px;
+      overflow: hidden;      
+
+      .wanderer-close-btn{
+        display: block;
+        position: absolute;
+        top: 17px;
+        right: 20px;
+      }
+
+      .wanderer-links{
+        @include flexbox(flex-start, column);
+        margin-top: 40px;
+        a{
+          margin-top: 40px;
+        }
+
+      }
+
+    }
+
+  }
+}

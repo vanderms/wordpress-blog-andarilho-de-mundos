@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&display=swap");
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -5,4 +6,107 @@
 
 body {
   margin: 0px;
+  background-color: #FFFBF7;
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+h1 {
+  margin: 0px;
+  font-size: 32px;
+  line-height: 1.4;
+}
+
+@media screen and (max-width: 1079px) {
+  h1 {
+    font-size: 26px;
+  }
+}
+
+.wanderer-cover {
+  background-color: #000;
+  color: #fff;
+  width: 100%;
+  height: Min(calc(100vh - 80px), 600px);
+  padding-right: calc(50% - 650px);
+  padding-left: calc(50% - 650px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+
+@media screen and (max-width: 1499px) {
+  .wanderer-cover {
+    padding-right: 8%;
+    padding-left: 8%;
+  }
+}
+
+@media screen and (max-width: 1079px) {
+  .wanderer-cover {
+    padding-right: 6%;
+    padding-left: 6%;
+  }
+}
+
+@media screen and (max-width: 679px) {
+  .wanderer-cover {
+    padding-right: 3%;
+    padding-left: 3%;
+  }
+}
+
+@media screen and (max-width: 359px) {
+  .wanderer-cover {
+    padding-right: 2px;
+    padding-left: 2px;
+  }
+}
+
+.wanderer-cover .wanderer-text-container {
+  width: 50%;
+  height: 100%;
+  padding-right: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.wanderer-cover .wanderer-text-container blockquote {
+  margin-left: 0px;
+}
+
+.wanderer-cover .wanderer-text-container blockquote .wanderer-quotation {
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.wanderer-cover .wanderer-text-container blockquote .wanderer-author {
+  text-align: right;
+}
+
+.wanderer-cover .wanderer-image {
+  width: 50%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }

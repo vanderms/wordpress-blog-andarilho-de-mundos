@@ -1,3 +1,5 @@
+@import 'globals.scss';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&display=swap');
 
 *{
   box-sizing: border-box;
@@ -5,4 +7,50 @@
 
 body{
   margin: 0px;
+  background-color: $primary-light;  
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+h1{
+  margin: 0px;
+  font-size: 32px;
+  line-height: 1.4;
+  @include media-query($tablet){
+    font-size: 26px;
+  }
+}
+
+.wanderer-cover{
+  @include bg-schema($dark, $light);
+  @include size(100%, Min(calc(100vh - #{$navbar-height}), 600px));
+  @include padding-container;
+  @include flexbox(flex-start);
+  padding-top: 100px;
+  padding-bottom: 50px;
+
+  .wanderer-text-container{
+    @include size(50%, 100%);
+    padding-right: 50px;
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between;   
+    blockquote{
+      margin-left: 0px;
+      .wanderer-quotation{
+        font-style: italic;
+        line-height: 1.6;        
+      }
+      .wanderer-author{
+        text-align: right;
+      }
+    }
+  }
+
+  .wanderer-image{
+    @include size(50%, 100%);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+  }
 }

@@ -10,7 +10,7 @@ class AssetsLoader {
   public static function init(){
     if(!AssetsLoader::$hasInit):      
       
-      AssetsLoader::$version = wp_get_theme()->get('Version') . rand(1, 100);
+      AssetsLoader::$version = wp_get_theme()->get('Version') . rand(1, 1000000);
       AssetsLoader::$uri = get_template_directory_uri();
 
       $namespace = 'com\\vanderms\\wanderertheme\\AssetsLoader::'; 
@@ -21,15 +21,28 @@ class AssetsLoader {
   }
 
   public static function loadStyles(){
-    wp_enqueue_style( 'index', AssetsLoader::$uri . '/assets/css/index.css',
-      false,  AssetsLoader::$version
-    );
+    
+    $files = scandir(get_template_directory().'/assets/css/');
+
+    foreach($files as $file):
+      if($file !== 'globals.css' && strpos($file, '.css') !== false):        
+        wp_enqueue_style( $file, AssetsLoader::$uri . '/assets/css/' . $file,
+          false,  AssetsLoader::$version
+        );
+      endif;
+    endforeach;
   }
 
   public static function loadScripts(){
-    wp_enqueue_script( 'main', AssetsLoader::$uri . '/assets/js/main.js', 
-      false,  AssetsLoader::$version, true
-    );
+    $files = scandir(get_template_directory().'/assets/js/');
+
+    foreach($files as $file):
+      if(strpos($file, '.js') !== false):        
+        wp_enqueue_script( $file, AssetsLoader::$uri . '/assets/js/' . $file, 
+          false,  AssetsLoader::$version, true
+        );
+      endif;
+    endforeach;
   }
 }
 ?>

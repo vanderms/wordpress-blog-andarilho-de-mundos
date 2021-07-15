@@ -1,0 +1,87 @@
+
+$primary: #B18F59;
+$primary-light: #FFFBF7;
+$primary-dark: #332517;
+$light: #fff;
+$dark: #000;
+
+$navbar-height: 80px;
+$sidebar-menu-height: 56px;
+$rounded: 5px;
+
+
+$laptop: 1499px;
+$tablet: 1079px;
+$mobile: 679px;
+$small-mobile: 359px;
+
+
+@mixin media-query($breakpoint){
+  @media screen and (max-width: $breakpoint){
+    @content;
+  }
+}
+
+
+@mixin margin-container(){
+  margin-right: calc(50% - 650px);
+  margin-left: calc(50% - 650px);
+
+  @include media-query($laptop){
+    margin-right: 8%;
+    margin-left: 8%;
+  }  
+  @include media-query($tablet){
+    margin-right: 6%;
+    margin-left: 6%;
+  }
+  @include media-query($mobile){
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+  @include media-query($small-mobile){
+    margin-right: 4px;
+    margin-left: 4px;
+  }
+}
+
+
+@mixin padding-container(){
+  padding-right: calc(50% - 650px);
+  padding-left: calc(50% - 650px);
+
+  @include media-query($laptop){
+    padding-right: 8%;
+    padding-left: 8%;
+  }  
+  @include media-query($tablet){
+    padding-right: 6%;
+    padding-left: 6%;
+  }
+  @include media-query($mobile){
+    padding-right: 3%;
+    padding-left: 3%;
+  }
+  @include media-query($small-mobile){
+    padding-right: 2px;
+    padding-left: 2px;
+  }
+}
+
+
+@mixin bg-schema($background-color, $text-color){
+  background-color: $background-color;
+  color: $text-color;
+}
+
+@mixin size($width, $height){
+  width: $width;
+  height: $height;
+}
+
+@mixin flexbox($justify, $direction : row){
+  display: flex; 
+  flex-direction: $direction;
+  align-items: center;
+  justify-content: $justify;
+}

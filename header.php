@@ -1,5 +1,4 @@
-<?php namespace com\vanderms\wanderertheme; 
-?>
+<?php namespace com\vanderms\wanderertheme;?>
 <html lang='pt-br'>
 <head>
   <meta charset="UTF-8">
@@ -8,8 +7,6 @@
   <?php wp_head() ?>
   <title><?php bloginfo('name'); ?></title>
 </head>
-<body>
-  <nav>
-    <?php get_template_part('components/navlinks/navlinks'); ?>
-  </nav>
+<body <?php body_class(); ?>>
+  <?php get_template_part('template-parts/navbar/navbar') ?>
 <main>
