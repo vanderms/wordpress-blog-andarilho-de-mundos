@@ -22,11 +22,15 @@ h1 {
   }
 }
 
+.wanderer-small {
+  font-size: 14px;
+}
+
 .wanderer-cover {
   background-color: #000;
   color: #fff;
   width: 100%;
-  height: Min(calc(100vh - 80px), 600px);
+  height: Max(calc(100vh - 80px), 520px);
   padding-right: calc(50% - 650px);
   padding-left: calc(50% - 650px);
   display: -webkit-box;
@@ -69,8 +73,8 @@ h1 {
 
 @media screen and (max-width: 359px) {
   .wanderer-cover {
-    padding-right: 2px;
-    padding-left: 2px;
+    padding-right: 5px;
+    padding-left: 5px;
   }
 }
 
@@ -99,8 +103,59 @@ h1 {
   line-height: 1.6;
 }
 
+.wanderer-cover .wanderer-text-container blockquote .wanderer-tablet-image {
+  display: none;
+}
+
 .wanderer-cover .wanderer-text-container blockquote .wanderer-author {
   text-align: right;
+}
+
+.wanderer-cover .wanderer-text-container .wanderer-cta form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.wanderer-cover .wanderer-text-container .wanderer-cta form input {
+  width: 300px;
+  height: 40px;
+  border: 1px solid white;
+  border-radius: 5px 0px 0px 5px;
+  font-family: inherit;
+  font-size: 1em;
+  padding-left: 8px;
+}
+
+.wanderer-cover .wanderer-text-container .wanderer-cta form button {
+  width: 60px;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: 1px solid white;
+  border-radius: 0px 5px 5px 0px;
+  background-color: #B18F59;
 }
 
 .wanderer-cover .wanderer-image {
@@ -109,4 +164,38 @@ h1 {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 1079px) {
+  .wanderer-cover {
+    height: auto;
+  }
+  .wanderer-cover .wanderer-text-container {
+    width: 100%;
+    padding-right: 0px;
+  }
+  .wanderer-cover .wanderer-text-container header {
+    margin-bottom: 40px;
+  }
+  .wanderer-cover .wanderer-text-container header h1 {
+    margin-bottom: 20px;
+  }
+  .wanderer-cover .wanderer-text-container .wanderer-tablet-image {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-bottom: 67%;
+  }
+  .wanderer-cover .wanderer-text-container .wanderer-cta form input {
+    width: 260px;
+  }
+  .wanderer-cover .wanderer-image {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 359px) {
+  .wanderer-cover .wanderer-text-container .wanderer-cta form input {
+    width: 200px;
+  }
 }

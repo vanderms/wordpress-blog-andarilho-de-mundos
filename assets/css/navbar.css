@@ -59,8 +59,8 @@
 
 @media screen and (max-width: 359px) {
   .wanderer-nav-header .wanderer-bar {
-    padding-right: 2px;
-    padding-left: 2px;
+    padding-right: 5px;
+    padding-left: 5px;
   }
 }
 
@@ -73,6 +73,7 @@
   font-weight: 900;
   text-decoration: none;
   color: inherit;
+  text-align: center;
 }
 
 .wanderer-nav-header .wanderer-bar .wanderer-links a {

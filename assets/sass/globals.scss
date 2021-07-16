@@ -36,12 +36,12 @@ $small-mobile: 359px;
     margin-left: 6%;
   }
   @include media-query($mobile){
-    margin-right: 20px;
-    margin-left: 20px;
+    margin-right: 3%;
+    margin-left: 3%;
   }
   @include media-query($small-mobile){
-    margin-right: 4px;
-    margin-left: 4px;
+    margin-right: 5px;
+    margin-left: 5px;
   }
 }
 
@@ -63,8 +63,8 @@ $small-mobile: 359px;
     padding-left: 3%;
   }
   @include media-query($small-mobile){
-    padding-right: 2px;
-    padding-left: 2px;
+    padding-right: 5px;
+    padding-left: 5px;
   }
 }
 

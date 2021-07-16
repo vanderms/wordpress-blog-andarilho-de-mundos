@@ -1,5 +1,5 @@
 <?php namespace com\vanderms\wanderertheme; ?>
-<nav class='wanderer-nav-header'>
+<nav class='wanderer-nav-header wanderer-close'>
   <div class="wanderer-placeholder"></div>
   <div class="wanderer-backdrop"></div>
   <div class="wanderer-menu-bar">
